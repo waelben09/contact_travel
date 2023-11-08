@@ -1,0 +1,28 @@
+<!-- ce code définit la structure de la vue destination pour le modèle "contact_travel.destination"
+et crée une action pour afficher cette vue arborescente.
+Cela permet aux utilisateurs d'accéder facilement à la liste des destinations dans l'application Odoo.
+
+IL S'AGIT DE LA VUE DU MODULE SUPPLEMENTAIRE DESTINATION
+-->
+<odoo>
+    <data>
+        <!-- Définition de la vue Destination (tree view) -->
+        <record id="view_destination_tree" model="ir.ui.view">
+            <field name="name">destination.tree</field>
+            <field name="model">contact_travel.destination</field>
+            <field name="arch" type="xml">
+                <tree string="Destination">
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Définition de l'action permettant d'acceder a la vue Destination -->
+        <record id="action_destination_tree" model="ir.actions.act_window">
+            <field name="name">Destination</field>
+            <field name="res_model">contact_travel.destination</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

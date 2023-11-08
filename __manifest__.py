@@ -7,29 +7,41 @@
         subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        Long description of module's purpose
+        Le module "contact_travel" permet de gérer efficacement les voyages, de suivre le nombre de voyages par utilisateur,
+         et d'attribuer des niveaux de récompense en fonction des voyages effectués. 
+         Il améliore la gestion des clients et des voyages dans Odoo, 
+         offrant des fonctionnalités de suivi et de récompense pour les utilisateurs.
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "wael benkherfallah",
 
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
+
+    # Check https://github.com/waelben09/contact_travel
     'category': 'Uncategorized',
     'version': '0.1',
 
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
+    # Modules dont dépend le bon fonctionnement de celui-ci.
+    'depends': ['base', 'contacts'],
 
-    # always loaded
+    # Données qui seront toujours chargées avec ce module.
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/destination_view.xml',  # Vues associées au modèle 'Destination'.
+        'views/contact_inherit.xml',  # Vue qui étend et modifie la vue du modèle 'Contact'.
     ],
-    # only loaded in demonstration mode
+
+    # Données utilisées uniquement en mode de démonstration.
     'demo': [
-        'demo/demo.xml',
+        'demo/demo.xml',  # Données de démonstration, telles que des exemples d'enregistrements.
     ],
+
+    # Indique si le module peut être installé.
+    'installable': True,
+
+    # Indique si le module est une application (utile pour le référencement dans l'interface Odoo).
+    'application': True,
+
+    # Séquence de chargement du module:
+    # le sequence 0 permet d'afficher mon module contact_travel en premiere position dans la liste des applications.
+    'sequence': 0,
+
 }
