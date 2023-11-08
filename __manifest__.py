@@ -27,6 +27,7 @@
     'data': [
         'views/destination_view.xml',  # Vues associées au modèle 'Destination'.
         'views/contact_inherit.xml',  # Vue qui étend et modifie la vue du modèle 'Contact'.
+        'views/voyage_view.xml',  # Vues associées au modèle 'Voyage'.
     ],
 
     # Données utilisées uniquement en mode de démonstration.

@@ -6,7 +6,12 @@
             <field name="name">res.partner.form.inherit</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
-
+            <field name="arch" type="xml">
+<!-- Ajout d'un bouton dans la vue de du formulaire Contact -->
+              <xpath position="inside" expr="//div[hasclass('oe_button_box')]">
+                  <button name="open_voyage_form_view" type="object" icon="fa-plane" class="oe_stat_button o_res_partner_tip_opp" string="Voyages de l'Utilisateur" />
+              </xpath>
+            </field>
         </record>
     </data>
 </odoo>

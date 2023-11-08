@@ -1,0 +1,46 @@
+<!-- ce code configure les vues et actions pour le modèle "contact_travel.voyage" dans Odoo,
+ permettant aux utilisateurs de gérer les voyages en affichant une liste arborescente -->
+
+
+<odoo>
+    <data>
+        <!-- Définition de la vue arborescente pour les voyages -->
+        <record id="view_voyage_tree" model="ir.ui.view">
+            <field name="name">voyage.tree</field>
+            <field name="model">contact_travel.voyage</field>
+            <field name="arch" type="xml">
+                <tree string="Voyages">
+                    <field name="name"/>
+                    <field name="contact"/>
+                    <field name="departure_date"/>
+                    <field name="destination"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Définition de la vue en formulaire pour les voyages -->
+        <record id="view_voyage_form" model="ir.ui.view">
+            <field name="name">voyage.form</field>
+            <field name="model">contact_travel.voyage</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" string="Name" />
+                            <field name="contact" string="contact" />
+                            <field name="departure_date"/>
+                            <field name="destination"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Définition de l'action liée à la vue arborescente des voyages -->
+        <record id="action_voyage_tree" model="ir.actions.act_window">
+            <field name="name">Voyages</field>
+            <field name="res_model">contact_travel.voyage</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,16 @@
+<!-- ce code définit la structure d'un menu "Travel" avec deux sous-menus, "Voyage" et "Destinations",
+permettant aux utilisateurs d'accéder aux fonctionnalités correspondantes des modules "Voyage" et "Destinations" dans l'application Odoo.
+-->
+<odoo>
+    <!-- L'attribut "noupdate" avec la valeur "1" indique que ces données ne doivent pas être mises à jour une fois qu'elles sont créées.-->
+    <data noupdate="1">
+        <!-- Définition d'un élément de menu principal nommé "Travel" -->
+        <menuitem id="menu_contacts_travels" name="Travel" sequence="20" />
+
+        <!-- Définition d'un sous-menu "Voyage" dans "Travel" -->
+        <menuitem name="Voyage" id="menu_contacts_voyages" parent="menu_contacts_travels" action="contact_travel.action_voyage_tree" />
+
+        <!-- Définition d'un sous-menu "Destinations" dans "Travel" -->
+        <menuitem name="Destinations" id="menu_contacts_desination" parent="menu_contacts_travels" action="contact_travel.action_destination_tree" />
+    </data>
+</odoo>
