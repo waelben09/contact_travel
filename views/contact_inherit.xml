@@ -9,7 +9,9 @@
             <field name="arch" type="xml">
 <!-- Ajout d'un bouton dans la vue de du formulaire Contact -->
               <xpath position="inside" expr="//div[hasclass('oe_button_box')]">
-                  <button name="open_voyage_form_view" type="object" icon="fa-plane" class="oe_stat_button o_res_partner_tip_opp" string="Voyages de l'Utilisateur" />
+                 <button name="open_voyage_form_view" type="object" icon="fa-plane" class="oe_stat_button o_res_partner_tip_opp">
+                  <field name="voyages_count" widget="statinfo" string="Voyages de l'Utilisateur"/>
+                 </button>
               </xpath>
             </field>
         </record>
