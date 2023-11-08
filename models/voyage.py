@@ -15,4 +15,19 @@ class Voyage(models.Model):
     departure_date = fields.Date(string="Departure Date")
     # destination
     destination = fields.Many2one("contact_travel.destination")
+    # Champ de relation Many2one avec le modèle "res.currency" pour lier la devise choisis .
+    currency_id = fields.Many2one("res.currency", string="Currency",compute="get_currency")
+    price = fields.Monetary(string="Prix")
+
+    # Définition d'une méthode onchange dans Odoo qui se déclenche lorsque le champ 'contact' est modifié.
+    @api.onchange('contact')
+    def get_currency(self):
+        for rec in self:
+            # Vérification si un contact est sélectionné.
+            if rec.contact:
+                # Si un contact est sélectionné, met à jour 'currency_id' avec la devise du contact.
+                rec.currency_id = rec.contact.currency_id
+            else:
+                # Si aucun contact n'est sélectionné, défini 'currency_id' comme False.
+                rec.currency_id = False
 

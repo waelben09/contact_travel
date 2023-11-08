@@ -1,2 +1,10 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_contact_travel_contact_travel,contact_travel.contact_travel,model_contact_travel_contact_travel,base.group_user,1,1,1,1
+access_contact_travel_contact_travel,Access to Voyage,model_contact_travel_voyage,base.group_user,1,1,1,1
+access_contact_travel_destination,Access to destination,model_contact_travel_destination,base.group_user,1,1,1,1
+
+
+ // access_contact_travel_contact_travel: C'est l'identifiant unique pour cet enregistrement d'autorisation.
+ // Access to Voyage: C'est le nom ou la description de l'autorisation, qui indique qu'il s'agit d'un accès aux voyages.
+ // base.group_user: C'est le groupe d'utilisateurs auquel cette autorisation est affectée. Dans ce cas, il s'agit du groupe "Utilisateur" par défaut.
+ // 1, 1, 1, 1: Ces valeurs définissent les autorisations (lecture, écriture, création, suppression) pour ce modèle.
+ // 1 signifie "Autorisé".

@@ -2,9 +2,6 @@
 {
     'name': "contact_travel",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
 
     'description': """
         Le module "contact_travel" permet de gérer efficacement les voyages, de suivre le nombre de voyages par utilisateur,
@@ -14,9 +11,9 @@
     """,
 
     'author': "wael benkherfallah",
+    'website': "https://github.com/waelben09/contact_travel",
 
 
-    # Check https://github.com/waelben09/contact_travel
     'category': 'Uncategorized',
     'version': '0.1',
 
@@ -25,9 +22,11 @@
 
     # Données qui seront toujours chargées avec ce module.
     'data': [
+        'security/ir.model.access.csv',  # Fichier de sécurité pour la gestion des autorisations d'accès.
+        'views/voyage_view.xml',  # Vues associées au modèle 'Voyage'.
         'views/destination_view.xml',  # Vues associées au modèle 'Destination'.
         'views/contact_inherit.xml',  # Vue qui étend et modifie la vue du modèle 'Contact'.
-        'views/voyage_view.xml',  # Vues associées au modèle 'Voyage'.
+        'views/menu.xml',  # Fichier pour la création de menus dans l'interface Odoo.
     ],
 
     # Données utilisées uniquement en mode de démonstration.
